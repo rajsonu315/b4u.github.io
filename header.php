@@ -1,3 +1,16 @@
+<link rel="shortcut icon" type="image/x-icon" href="Content/Images/favicon.ico" />
+<link href="Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="Content/css/font-awesome.css" rel="stylesheet">
+<link href="Content/css/carousel.css" rel="stylesheet" type="text/css" />
+<link href="Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="Content/css/index.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="Content/themes/blitzer/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="Content/themes/blitzer/jquery-ui.theme.min.css" />
+<link rel="stylesheet" type="text/css" href="Content/themes/blitzer/jquery-ui.structure.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <header>
     <div class="container-fluid" style="padding-right: 0px; padding-left:0px; padding-top:18px; margin-bottom:18px;">
         <div class="navbar-wrapper">
@@ -8,7 +21,7 @@
                         <div class="header-logo-block">
 
                             <a class="header-logo" href="index.php">
-                                <img src="Content/Images/logo-login.png" class="class="  />
+                                <img src="Content/Images/logo-login.png" class="class=" />
                             </a>
                         </div>
 
@@ -88,7 +101,7 @@
                                         </span>
                                         <span class="pull-left userText">
                                             Welcome,<br />
-                                            <span class="pro_name" id="displayname"></span>!
+                                            <span class="pro_name" id="displayname">test user</span>!
                                         </span>
                                     </a>
                                     <ul class="dropdown-menu">

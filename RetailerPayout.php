@@ -7,68 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <title>Retailers</title>
-    <link rel="shortcut icon" type="image/x-icon" href="Content/Images/favicon.ico" />
-    <link href="Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="Content/css/font-awesome.css" rel="stylesheet">
-    <link href="Content/css/carousel.css" rel="stylesheet" type="text/css" />
-    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="Content/css/index.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="Content/themes/blitzer/jquery-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="Content/themes/blitzer/jquery-ui.theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="Content/themes/blitzer/jquery-ui.structure.min.css" />
 
 
-    <style>
-        .ui-dialog .ui-dialog-content {
-            height: auto !important;
-        }
-    </style>
-    <style>
-        .progress-indicator {
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            text-align: center;
-            /* IE filter */
-            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
-            -moz-opacity: 0.5;
-            /* Mozilla extension */
-            -khtml-opacity: 0.5;
-            /* Safari/Conqueror extension */
-            opacity: 0.5;
-            /* CSS3 */
-            z-index: 1000;
-            background-color: White;
-            display: none;
-        }
 
-        .progress-indicator img {
-            margin-top: 300px;
-        }
-    </style>
-    <style type="text/css">
-        #overlay {
-            position: fixed;
-            height: 100%;
-            width: 100%;
-            z-index: 1000000;
-            background: url('../Content/images/al.gif');
-            background-color: Black;
-            opacity: 0.6;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    </style>
 </head>
 
 <body>
 
-<?php
+    <?php
 
-include('header.php');
-?>
+    include('header.php');
+    ?>
 
 
     <div class="clearfix"></div>
@@ -79,10 +28,6 @@ include('header.php');
                     <div class="row">
 
 
-
-                        <style>
-                            .pre-scrollable {}
-                        </style>
                         <div class="Main_page">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -91,16 +36,96 @@ include('header.php');
                             </div>
                             <div class="myorderpage">
 
-                                <div class="row">
-                                    <div class="col-lg-12 pre-scrollable">
-                                        <div class=" scrollx">
-                                            <div id="grid_wrapper" class="ui-corner-all floatLeft WPX1000">
-                                                <table id="list"></table>
-                                                <div id="pager">
+                            <div class="container">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="filter-wrapper">
+                                                    <!-- <input type="checkbox" class="filter-checkbox" value="Software Engineer" /> Software Engineer
+                                                    <input type="checkbox" class="filter-checkbox" value="Accountant" /> Accountant
+                                                    <input type="checkbox" class="filter-checkbox" value="Sales Assistant" /> Sales Assistant
+                                                    <input type="checkbox" class="filter-checkbox" value="Developer" /> Developer -->
                                                 </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <!-- <div class="btn-group submitter-group pull-right">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">Status</div>
+                                                    </div>
+                                                    <select class="form-control status-dropdown">
+                                                        <option value="">All</option>
+                                                        <option value="DRF">Draft</option>
+                                                        <option value="PCH">Pending Review</option>
+                                                        <option value="PAU">Pending Authorisation</option>
+                                                        <option value="Received">Received</option>
+                                                        <option value="Processing">Processing</option>
+                                                        <option value="Query">Query</option>
+                                                        <option value="Approved">Approved</option>
+                                                        <option value="Rejected">Rejected</option>
+                                                        <option value="Amended">Amended</option>
+                                                        <option value="Cancelled">Cancelled</option>
+                                                    </select>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
+                                    <table id="example" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Office</th>
+                                                <th>Age</th>
+                                                <th>Start date</th>
+                                                <th>Salary</th>
+                                                <th>Salary</th>
+
+                                                <th>Status</th>
+                                                <th>Hidden</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>Ashton Cox</td>
+                                                <td>Junior Technical Author</td>
+                                                <td>San Francisco</td>
+                                                <td>66</td>
+                                                <td>2009/01/12</td>
+                                                <td>$86,000</td>
+                                                <td>$86,000</td>
+                                                <td>
+                                                    <div class="badge status-badge badge-info">
+                                                        Pending Review
+                                                    </div>
+                                                </td>
+                                                <td>PCH</td>
+                                            </tr>
+
+
+
+
+
+
+                                            <tr>
+                                                <td>Gloria Little</td>
+                                                <td>Systems Administrator</td>
+                                                <td>New York</td>
+                                                <td>59</td>
+                                                <td>2009/04/10</td>
+                                                <td>$237,500</td>
+                                                <td>$86,000</td>
+                                                <td>
+                                                    <div class="badge status-badge badge-info">
+                                                        Draft
+                                                    </div>
+                                                </td>
+                                                <td>DRF</td>
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
                                 </div>
 
                             </div>
@@ -121,16 +146,19 @@ include('header.php');
 
     ?>
 
-    <script src="Scripts/jquery-3.5.1.min.js" type="text/javascript"></script>
-    <script src="Scripts/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="Scripts/js/index.js" type="text/javascript"></script>
-    <script src="Scripts/js/jquery.film_roll.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="Scripts/jqGridHelper.js" type="text/javascript"></script>
-    <script src="Scripts/Custom/ValidationCheck.js"></script>
-    <link rel="stylesheet" href="Scripts/slick/slick.css">
-    <link rel="stylesheet" href="Scripts/slick/slick-theme.css">
-    <script src="Scripts/slick/slick.js" type="text/javascript"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            dataTable = $("#example").DataTable({
+                "columnDefs": [{
+                    "targets": [8],
+                    "visible": false
+                }]
+
+            });
+        });
+    </script>
 
 
 </body>

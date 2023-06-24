@@ -497,8 +497,9 @@ footer {
     float: left;
     width: 100%;
     color: #000;
-    margin-top: 15px;
+   padding: 10px;
     margin-bottom: 15px;
+    background-color: #ffff;
 }
 
 .footer a {
@@ -4898,8 +4899,8 @@ header {
 }
 
 .homedivbt {
-    border-radius: 35% 35% 0% 0%;
-    height: 200px;
+    border-radius: 60% 60% 0% 0%;
+    height: 100px;
     width: 100%;
     display: block;
     background: rgba(230, 54, 51, 1);
@@ -4972,7 +4973,7 @@ header {
 }
 
 .homedivMid .trackBg {
-    background: url(https://i.makeagif.com/media/2-08-2023/mYgMow.gif);
+    background: url(https://www.picng.com/upload/buttons/png_buttons_87418.png);
     background-size: cover;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -4989,7 +4990,7 @@ header {
 }
 
 .homedivMid .trackBg2 {
-    background: url(https://i.makeagif.com/media/2-08-2023/mYgMow.gif);
+    background: url(https://www.picng.com/upload/buttons/png_buttons_87418.png);
     background-size: cover;
     background-size: 100% 100%;
     background-repeat: no-repeat;

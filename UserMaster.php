@@ -7,60 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
     <title>User Master</title>
-    <link rel="shortcut icon" type="image/x-icon" href="Content/Images/favicon.ico" />
-    <link href="Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="Content/css/font-awesome.css" rel="stylesheet">
-    <link href="Content/css/carousel.css" rel="stylesheet" type="text/css" />
-    <link href="Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="Content/css/index.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="Content/themes/blitzer/jquery-ui.min.css" />
-    <link rel="stylesheet" type="text/css" href="Content/themes/blitzer/jquery-ui.theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="Content/themes/blitzer/jquery-ui.structure.min.css" />
 
 
-    <style>
-        .ui-dialog .ui-dialog-content {
-            height: auto !important;
-        }
-    </style>
-    <style>
-        .progress-indicator {
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            text-align: center;
-            /* IE filter */
-            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
-            -moz-opacity: 0.5;
-            /* Mozilla extension */
-            -khtml-opacity: 0.5;
-            /* Safari/Conqueror extension */
-            opacity: 0.5;
-            /* CSS3 */
-            z-index: 1000;
-            background-color: White;
-            display: none;
-        }
 
-        .progress-indicator img {
-            margin-top: 300px;
-        }
-    </style>
-    <style type="text/css">
-        #overlay {
-            position: fixed;
-            height: 100%;
-            width: 100%;
-            z-index: 1000000;
-            background: url('../Content/images/al.gif');
-            background-color: Black;
-            opacity: 0.6;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    </style>
 </head>
 
 <body>
@@ -99,531 +48,7 @@
                             }
                         </script>
 
-                        <script type="text/javascript">
-                            var lastSel;
-                            var RootPath = "";
-                            jQuery(document).ready(function() {
-                                jQuery("#list").jqGrid({
-                                    datatype: 'json',
-                                    altRows: true,
-                                    rowNum: 20,
-                                    loadtext: "Please wait...",
-                                    viewrecords: true,
-                                    mtype: 'POST',
-                                    pager: jQuery('#pager'),
-                                    rowNum: 20,
-                                    rowList: [5, 10, 20, 50, 100, 200, 500, 1000],
-                                    viewrecords: true,
-                                    recordtext: "Viewing {0} - {1} of {2}",
-                                    imgpath: '/Scripts/css/blitzer/images',
-                                    caption: "",
-                                    url: RootPath + '/UserMaster/IndexJson',
-                                    editurl: RootPath + '/UserMaster/Save',
-                                    colNames: ['Id', 'User Name', 'First Name', 'Last Name',
-                                        'Entity', 'Mobile', 'RSM', 'ASM', 'ASE', 'SOM', 'UDM', 'Region', 'User Type', 'Program', 'Tier', 'Status', 'KYC'
-                                    ],
-                                    colModel: [{
-                                            name: 'USR_ID',
-                                            key: true,
-                                            hidden: true,
-                                            index: 'USR_ID',
-                                            width: 50,
-                                            align: 'left',
-                                            editable: false,
-                                            searchoptions: {
-                                                sopt: ['eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_USERNAME',
-                                            index: 'USR_USERNAME',
-                                            width: 60,
-                                            align: 'left',
-                                            editable: true,
-                                            searchoptions: {
-                                                sopt: ['cn', 'eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_FIRSTNAME',
-                                            index: 'USR_FIRSTNAME',
-                                            width: 100,
-                                            align: 'left',
-                                            editable: true,
-                                            searchoptions: {
-                                                sopt: ['cn', 'eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_LASTNAME',
-                                            index: 'USR_LASTNAME',
-                                            width: 100,
-                                            align: 'left',
-                                            editable: true,
-                                            searchoptions: {
-                                                sopt: ['cn', 'eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'usr_distributer',
-                                            index: 'usr_distributer',
-                                            width: 150,
-                                            align: 'left',
-                                            editable: true,
-                                            searchoptions: {
-                                                sopt: ['cn', 'eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_MOBILE',
-                                            index: 'USR_MOBILE',
-                                            width: 80,
-                                            align: 'left',
-                                            editable: true,
-                                            searchoptions: {
-                                                sopt: ['cn', 'eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'usr_regionalmanager',
-                                            index: 'usr_regionalmanager',
-                                            width: 80,
-                                            align: 'left',
-                                            editable: true,
-                                            searchoptions: {
-                                                sopt: ['cn', 'eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'usr_areasalesmanager',
-                                            index: 'usr_areasalesmanager',
-                                            width: 80,
-                                            align: 'left',
-                                            editable: true,
-                                            searchoptions: {
-                                                sopt: ['cn', 'eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_ASEUserName',
-                                            index: 'USR_ASEUserName',
-                                            width: 80,
-                                            align: 'left',
-                                            editable: true,
-                                            searchoptions: {
-                                                sopt: ['cn', 'eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_SOMUserName',
-                                            index: 'USR_SOMUserName',
-                                            width: 80,
-                                            align: 'left',
-                                            editable: true,
-                                            searchoptions: {
-                                                sopt: ['cn', 'eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_UDM',
-                                            index: 'USR_UDM',
-                                            width: 80,
-                                            align: 'left',
-                                            editable: true,
-                                            searchoptions: {
-                                                sopt: ['cn', 'eq', 'ne']
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_LOCATION',
-                                            index: 'USR_LOCATION',
-                                            width: 80,
-                                            align: 'left',
-                                            editable: true,
-                                            edittype: 'select',
-                                            stype: 'select',
-                                            searchoptions: {
-                                                sopt: ['eq'],
-                                                dataUrl: '/UserMaster/GetCityList',
-                                                buildSelect: BS
-                                            },
-                                            editoptions: {
-                                                dataUrl: RootPath + '/UserMaster/GetCityList',
-                                                buildSelect: BS
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_TYPE',
-                                            index: 'USR_TYPE',
-                                            width: 80,
-                                            align: 'left',
-                                            editable: true,
-                                            edittype: 'select',
-                                            stype: 'select',
-                                            searchoptions: {
-                                                sopt: ['eq'],
-                                                dataUrl: '/UserMaster/GetProfileList',
-                                                buildSelect: BS
-                                            },
-                                            editoptions: {
-                                                dataUrl: RootPath + '/UserMaster/GetProfileList',
-                                                buildSelect: BS
-                                            }
-                                        },
-                                        {
-                                            name: 'usr_bpnid',
-                                            index: 'usr_bpnid',
-                                            width: 60,
-                                            align: 'left',
-                                            editable: true,
-                                            edittype: 'select',
-                                            stype: 'select',
-                                            searchoptions: {
-                                                sopt: ['eq'],
-                                                dataUrl: '/UserMaster/GetBritanniaProgrameList',
-                                                buildSelect: BS
-                                            },
-                                            editoptions: {
-                                                dataUrl: '/UserMaster/GetBritanniaProgrameList',
-                                                buildSelect: BS
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_BRTTIER',
-                                            index: 'USR_BRTTIER',
-                                            width: 60,
-                                            align: 'left',
-                                            editable: true,
-                                            edittype: 'select',
-                                            stype: 'select',
-                                            searchoptions: {
-                                                sopt: ['eq'],
-                                                dataUrl: '/UserMaster/GetBritaniaTierListUser',
-                                                buildSelect: BS
-                                            },
-                                            editoptions: {
-                                                dataUrl: '/UserMaster/GetBritaniaTierListUser',
-                                                buildSelect: BS
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_STATUS',
-                                            index: 'USR_STATUS',
-                                            width: 60,
-                                            align: 'left',
-                                            editable: true,
-                                            edittype: 'select',
-                                            stype: 'select',
-                                            searchoptions: {
-                                                sopt: ['eq'],
-                                                dataUrl: '/UserMaster/GetStatuslist',
-                                                buildSelect: BS
-                                            },
-                                            editoptions: {
-                                                dataUrl: '/UserMaster/GetStatuslist',
-                                                buildSelect: BS
-                                            }
-                                        },
-                                        {
-                                            name: 'USR_IsKYC',
-                                            index: 'USR_IsKYC',
-                                            width: 60,
-                                            align: 'left',
-                                            editable: true,
-                                            edittype: 'select',
-                                            stype: 'select',
-                                            searchoptions: {
-                                                value: ":All;1:Yes;2:No",
-                                                sopt: ['eq', 'ne']
-                                            }
-                                        }
-                                    ],
-                                    sortname: 'USR_FIRSTNAME',
-                                    sortorder: "asc",
-                                    gridComplete: function() {
-                                        var top_rowid = jQuery('#list tbody:first-child tr').eq(1).attr('USR_ID'); //jQuery('#list tbody:first-child tr:first').attr('amx_id');
-                                        jQuery("#list").jqGrid('setSelection', top_rowid, false);
-                                    },
-                                    loadError: function(jqXHR, textStatus, errorThrown) {
-                                        $('#notification').delay(0).fadeIn('fast');
-                                        $('#notification').html('<div class="ui-widget"><div class="ui-state-error ui-corner-all" style="padding: 0 .7em;"><p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span><strong>Alert: </strong>' +
-                                            decodeErrorMessage(jqXHR, textStatus, errorThrown) + '</p></div></div>');
-                                        $('#notification').delay(5000).fadeOut('slow');
-                                    },
-                                    loadComplete: function() {
-                                        $('#notification').html('');
-                                    }
-                                });
-                                jQuery("#list").navGrid("#pager", {
-                                    edit: false,
-                                    add: false,
-                                    del: false,
-                                    deltext: '',
-                                    refresh: true,
-                                    refreshtext: '',
-                                    search: true,
-                                    searchtext: ''
-                                }, {}, {}, {}, {
-                                    multipleSearch: true
-                                });
-                                jQuery("#list").jqGrid('filterToolbar', {
-                                    stringResult: true,
-                                    searchOnEnter: false,
-                                    defaultSearch: 'cn'
-                                });
 
-                                jQuery("#list").navGrid("#pager").navButtonAdd('#pager', {
-                                    caption: "Filter",
-                                    title: "Toggle Searching Toolbar",
-                                    buttonicon: 'ui-icon-pin-s',
-                                    onClickButton: function() {
-                                        jQuery("#list")[0].toggleToolbar();
-                                    }
-                                });
-
-                                jQuery("#list").navGrid("#pager").navButtonAdd('#pager', {
-                                    caption: "Edit User",
-                                    title: "Edit User",
-                                    buttonicon: 'ui-icon ui-icon-pencil',
-                                    onClickButton: function() {
-                                        var myGrid = $('#list');
-                                        var rowKey = myGrid.getGridParam('selrow');
-                                        if (rowKey == undefined) {
-                                            alert("Please select a row.");
-                                        } else {
-                                            $("#grid_wrapper").slideUp();
-                                            $("#AddUser").slideDown();
-                                            $("#AddUser").css("overflow", "visible");
-                                            $.ajax({
-                                                url: '/UserMaster/GetUserData',
-                                                data: {
-                                                    USR_CNYID: rowKey
-                                                },
-                                                async: true,
-                                                type: 'POST',
-                                                success: function(data) {
-                                                    $('#USR_ID').val(data.USR_ID);
-                                                    $.each(data, function(Name, Value) {
-                                                        if (Value != null) {
-                                                            $('#' + Name).val(Value);
-                                                        } else {
-                                                            $('#' + Name).val('');
-                                                        }
-                                                    });
-                                                    $('#USR_bpnid').val(data.USR_bpnid);
-                                                    LoadData(data);
-                                                }
-                                            });
-                                        }
-                                    }
-                                });
-
-
-                                jQuery("#list").navGrid("#pager").navButtonAdd('#pager', {
-                                    caption: "Add User",
-                                    title: "Add User",
-                                    buttonicon: 'ui-icon ui-icon-plus',
-                                    onClickButton: function() {
-                                        $("#grid_wrapper").slideUp();
-                                        $("#AddUser").slideDown();
-                                        $("#AddUser").css("overflow", "visible");
-                                        $("#AddUser").find('input[type="text"]').each(function() {
-                                            $(this).val('');
-                                        });
-                                        $("#USR_ID").val('');
-                                        $("#USR_LVLID option:eq(0)").attr('selected', 'selected');
-                                        $("#USR_STATUS option:eq(0)").attr('selected', 'selected');
-                                        $("#USR_CNYID option:eq(0)").attr('selected', 'selected');
-                                        $("#USR_CAEID option:eq(0)").attr('selected', 'selected');
-                                        $("#USR_DEPT option:eq(0)").attr('selected', 'selected');
-                                        $("#USR_FUNID option:eq(0)").attr('selected', 'selected');
-                                        $("#USR_COSTCODE option:eq(0)").attr('selected', 'selected');
-                                        $("#USR_LOCATION option:eq(0)").attr('selected', 'selected');
-                                        $("#USR_FUNID option:eq(0)").attr('selected', 'selected');
-                                        $("#USR_PRFID option:eq(0)").attr('selected', 'selected');
-                                    }
-                                });
-
-                                jQuery("#list").navGrid("#pager").navButtonAdd('#pager', {
-                                    caption: "Upload User",
-                                    title: "Bulk Upload",
-                                    buttonicon: 'ui-icon ui-icon-plus',
-                                    onClickButton: function() {
-                                        window.location = "ImportProduct";
-                                    }
-                                });
-                                jQuery("#list").navGrid("#pager").navButtonAdd('#pager', {
-                                    caption: "Export Grid",
-                                    title: "Export Grid",
-                                    buttonicon: 'ui-icon ui-icon-plus',
-                                    onClickButton: function() {
-                                        jQuery("#MyForm3").submit();
-                                    }
-                                });
-                                jQuery("#list").navGrid("#pager").navButtonAdd('#pager', {
-                                    caption: "Export All",
-                                    title: "Export All",
-                                    buttonicon: 'ui-icon ui-icon-plus',
-                                    onClickButton: function() {
-                                        jQuery("#MyForm4").submit();
-                                    }
-                                });
-
-                                resize_grid();
-                                $(window).resize(resize_grid);
-                                jQuery("#list")[0].toggleToolbar();
-                                $("#grid_wrapper").slideDown();
-                                $("#AddUser").slideUp();
-
-                                $.ajax({
-                                    url: '/UserMaster/GetCityListProfile',
-                                    async: true,
-                                    type: 'POST',
-                                    success: function(data) {
-                                        PopulateSelectWithData('USR_OBHNAME', data);
-                                        $("#USR_OBHNAME").multipleSelect();
-                                    }
-                                });
-
-                                $.ajax({
-                                    url: '/UserMaster/GetCityList',
-                                    data: {
-                                        USR_CNYID: $('#USR_CNYID').val()
-                                    },
-                                    async: true,
-                                    type: 'POST',
-                                    success: function(data) {
-                                        PopulateSelectWithData('USR_LOCATION', data);
-                                        //$('#USR_LOCATION').val(data1.USR_LOCATION);
-                                    }
-                                });
-                                $.ajax({
-                                    url: '/UserMaster/GetBritaniaTierListUser',
-                                    async: true,
-                                    type: 'POST',
-                                    success: function(data) {
-                                        PopulateSelectWithData('USR_BRTTIER', data);
-
-                                    }
-                                });
-
-
-                                $.ajax({
-                                    url: '/UserMaster/GetProfileList',
-                                    data: {
-                                        USR_CNYID: $('#USR_CNYID').val()
-                                    },
-                                    async: true,
-                                    type: 'POST',
-                                    success: function(data) {
-                                        PopulateSelectWithData('USR_PRFID', data);
-                                        //$('#USR_PRFID').val(data1.USR_PRFID);
-                                    }
-                                });
-
-                                $.ajax({
-                                    url: '/UserMaster/GetGenderlist',
-                                    async: true,
-                                    type: 'POST',
-                                    success: function(data) {
-                                        PopulateSelectWithData('USR_GENDER', data);
-                                    }
-                                });
-                                $.ajax({
-                                    url: '/UserMaster/GetStatuslist',
-                                    async: true,
-                                    type: 'POST',
-                                    success: function(data) {
-                                        PopulateSelectWithData('USR_STATUS', data);
-                                    }
-                                });
-                                $.ajax({
-                                    url: '/UserMaster/GetBritanniaProgrameList',
-                                    async: true,
-                                    type: 'POST',
-                                    success: function(data) {
-                                        PopulateSelectWithData('USR_bpnid', data);
-                                    }
-                                });
-
-
-                                $(function() {
-                                    $(".datepicker").datepicker({
-                                        dateFormat: "dd-M-yy"
-                                    });
-                                });
-
-                                $("#Save").click(function() {
-                                    $.ajax({
-                                        url: '/UserMaster/SaveData',
-                                        data: $('#MyForm').serializeObject(),
-                                        async: true,
-                                        type: 'POST',
-                                        success: function(data) {
-                                            alert(data);
-                                            if (String(data).indexOf("saved successfully") > 0) {
-                                                $("#grid_wrapper").slideDown();
-                                                $("#AddUser").slideUp();
-                                                $('#list').trigger("reloadGrid");
-                                            }
-                                        }
-                                    });
-                                });
-
-                            });
-
-                            function LoadData(data1) {
-                                $.ajax({
-                                    url: '/UserMaster/GetCityList',
-                                    data: {
-                                        USR_CNYID: $('#USR_CNYID').val()
-                                    },
-                                    async: true,
-                                    type: 'POST',
-                                    success: function(data) {
-                                        PopulateSelectWithData('USR_LOCATION', data);
-                                        $('#USR_LOCATION').val(data1.USR_LOCATION);
-                                    }
-                                });
-
-                                $.ajax({
-                                    url: '/UserMaster/GetProfileList',
-                                    data: {
-                                        USR_CNYID: $('#USR_CNYID').val()
-                                    },
-                                    async: true,
-                                    type: 'POST',
-                                    success: function(data) {
-                                        PopulateSelectWithData('USR_PRFID', data);
-                                        $('#USR_PRFID').val(data1.USR_PRFID);
-                                    }
-                                });
-                            }
-
-                            function resize_grid() {
-                                $("#list").fluidGrid({
-                                    base: '#grid_wrapper',
-                                    offset: -5
-                                });
-                            }
-
-                            function Back() {
-                                $("#grid_wrapper").slideDown();
-                                $("#AddUser").slideUp();
-                            }
-
-                            $.fn.serializeObject = function() {
-                                var obj = {};
-
-                                $.each(this.serializeArray(), function(i, o) {
-                                    var n = o.name,
-                                        v = o.value;
-                                    obj[n] = obj[n] === undefined ? v : $.isArray(obj[n]) ? obj[n].concat(v) : [obj[n], v];
-                                });
-
-                                return obj;
-                            };
-                        </script>
                         <style>
                             .ui-dropdownchecklist-selector {
                                 padding: 5px;
@@ -654,22 +79,103 @@
                                 width: 330px !important;
                             }
                         </style>
-                        <form action="/UserMaster/ExportAll" id="MyForm4" method="post"></form>
-                        <form action="/UserMaster/ExportGrid" id="MyForm3" method="post"></form>
+
                         <div class="Main_page">
                             <h2 class="head-h2">
                                 User Master
                             </h2>
                             <div class="mobile_div">
-                                <div class="row">
-                                    <div class="col-lg-12 scrollx">
-                                        <div id="grid_wrapper" class="ui-corner-all floatLeft">
-                                            <table id="list"></table>
-                                            <div id="pager">
+
+                                <div class="container">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="filter-wrapper">
+                                                    <!-- <input type="checkbox" class="filter-checkbox" value="Software Engineer" /> Software Engineer
+                                                    <input type="checkbox" class="filter-checkbox" value="Accountant" /> Accountant
+                                                    <input type="checkbox" class="filter-checkbox" value="Sales Assistant" /> Sales Assistant
+                                                    <input type="checkbox" class="filter-checkbox" value="Developer" /> Developer -->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <!-- <div class="btn-group submitter-group pull-right">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">Status</div>
+                                                    </div>
+                                                    <select class="form-control status-dropdown">
+                                                        <option value="">All</option>
+                                                        <option value="DRF">Draft</option>
+                                                        <option value="PCH">Pending Review</option>
+                                                        <option value="PAU">Pending Authorisation</option>
+                                                        <option value="Received">Received</option>
+                                                        <option value="Processing">Processing</option>
+                                                        <option value="Query">Query</option>
+                                                        <option value="Approved">Approved</option>
+                                                        <option value="Rejected">Rejected</option>
+                                                        <option value="Amended">Amended</option>
+                                                        <option value="Cancelled">Cancelled</option>
+                                                    </select>
+                                                </div> -->
                                             </div>
                                         </div>
-
                                     </div>
+                                    <table id="example" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Office</th>
+                                                <th>Age</th>
+                                                <th>Start date</th>
+                                                <th>Salary</th>
+                                                <th>Salary</th>
+
+                                                <th>Status</th>
+                                                <th>Hidden</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr>
+                                                <td>Ashton Cox</td>
+                                                <td>Junior Technical Author</td>
+                                                <td>San Francisco</td>
+                                                <td>66</td>
+                                                <td>2009/01/12</td>
+                                                <td>$86,000</td>
+                                                <td>$86,000</td>
+                                                <td>
+                                                    <div class="badge status-badge badge-info">
+                                                        Pending Review
+                                                    </div>
+                                                </td>
+                                                <td>PCH</td>
+                                            </tr>
+
+
+
+
+
+
+                                            <tr>
+                                                <td>Gloria Little</td>
+                                                <td>Systems Administrator</td>
+                                                <td>New York</td>
+                                                <td>59</td>
+                                                <td>2009/04/10</td>
+                                                <td>$237,500</td>
+                                                <td>$86,000</td>
+                                                <td>
+                                                    <div class="badge status-badge badge-info">
+                                                        Draft
+                                                    </div>
+                                                </td>
+                                                <td>DRF</td>
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -910,16 +416,19 @@
 
 
 
-    <script src="Scripts/jquery-3.5.1.min.js" type="text/javascript"></script>
-    <script src="Scripts/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="Scripts/js/index.js" type="text/javascript"></script>
-    <script src="Scripts/js/jquery.film_roll.js" type="text/javascript"></script>
-    <script src="Scripts/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="Scripts/jqGridHelper.js" type="text/javascript"></script>
-    <script src="Scripts/Custom/ValidationCheck.js"></script>
-    <link rel="stylesheet" href="Scripts/slick/slick.css">
-    <link rel="stylesheet" href="Scripts/slick/slick-theme.css">
-    <script src="Scripts/slick/slick.js" type="text/javascript"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            dataTable = $("#example").DataTable({
+                "columnDefs": [{
+                    "targets": [8],
+                    "visible": false
+                }]
+
+            });
+        });
+    </script>
 
 
 </body>

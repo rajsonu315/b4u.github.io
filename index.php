@@ -19,37 +19,6 @@
 
 
 
-    <style>
-        .ui-dialog .ui-dialog-content {
-            height: auto !important;
-        }
-    </style>
-
-    <style>
-        .progress-indicator {
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            text-align: center;
-            /* IE filter */
-            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
-            -moz-opacity: 0.5;
-            /* Mozilla extension */
-            -khtml-opacity: 0.5;
-            /* Safari/Conqueror extension */
-            opacity: 0.5;
-            /* CSS3 */
-            z-index: 1000;
-            background-color: White;
-            display: none;
-        }
-
-        .progress-indicator img {
-            margin-top: 300px;
-        }
-    </style>
 
 </head>
 
@@ -74,21 +43,6 @@
 
 
 
-                        <style>
-                            .carousel-inner>.item>a>img,
-                            .carousel-inner>.item>img {
-                                min-height: 328px;
-                            }
-
-                            .homedivMid {
-                                margin-top: 0%;
-                            }
-
-                            .slider {
-                                width: 90% !important;
-                                margin: 0px auto 0px auto !important;
-                            }
-                        </style>
                         <div class="container">
                             <div class="homedivMid">
                                 <div class="row">
@@ -135,7 +89,7 @@
                                         </div>
                                         <br />
                                         <div class="profileQuery text-center">
-                                            <h4><a href="ContactUsList"> <img src="Content/Images/POST.png" width="20" /> QUERIES</a></h4>
+                                            <h4><a href="ContactUsList.php"> <img src="Content/Images/POST.png" width="20" /> QUERIES</a></h4>
                                             <div class="row">
                                                 <div class="col-md-6 text-success2 text-left">Open</div>
                                                 <div id="openCount" class="col-md-6 text-success2"></div>
@@ -162,22 +116,22 @@
                                                             <div class="col-md-12 col-xs-12">
 
 
-                                                            
-                                                                
-                                                                <div class="row trackBg" style="">
+
+
+                                                                <div class="row trackBg" >
                                                                     <a href="UserDetail.php" class="trackBox-1">OUTLET
                                                                         LEVEL
                                                                         TRACKER</a>
                                                                 </div>
-                                                                <div class="row trackBg trackBg2" style="">
+                                                                <div class="row trackBg trackBg2" >
                                                                     <a href="RetailerPayout.php" class="trackBox-1">OUTLET
                                                                         PAYOUTS</a>
                                                                 </div>
-                                                                <div class="row trackBg" style="">
+                                                                <div class="row trackBg" >
                                                                     <a href="ViewTargetData.php" class="trackBox-2">TARGET
                                                                         vs ACHIEVEMENT</a>
                                                                 </div>
-                                                                <div class="row trackBg" style="">
+                                                                <div class="row trackBg" >
                                                                     <a href="TargetApproveAdm.php" class="trackBox-3">TARGET
                                                                         REVISION</a>
                                                                 </div>
@@ -306,7 +260,7 @@
                             </div>
                         </div>
 
-                
+
 
 
 
@@ -317,7 +271,7 @@
     </div>
     <!-- footer-->
     <div class="clearfix"></div>
-    
+
 
     <?php
 
@@ -340,27 +294,6 @@
     <script src="Scripts/slick/slick.js" type="text/javascript"></script>
 
 
-    <script>
-        $(document).ready(function() {
-            $('.dropdown-toggle').dropdown()
-            $('.img-zoom').hover(function() {
-                $(this).addClass('transition');
-
-            }, function() {
-                $(this).removeClass('transition');
-            });
-
-            $(".vertical-center-4").slick({
-                dots: false,
-                vertical: false,
-                centerMode: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000
-            });
-        });
-    </script>
 
 
 
